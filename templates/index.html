@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firewall Simulation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Firewall Simulation</h1>
+        <div class="section">
+            <h2>Add Rule</h2>
+            <form id="ruleForm">
+                <input type="text" id="src_ip" placeholder="Source IP">
+                <input type="text" id="dest_ip" placeholder="Destination IP">
+                <input type="number" id="src_port" placeholder="Source Port">
+                <input type="number" id="dest_port" placeholder="Destination Port">
+                <input type="text" id="protocol" placeholder="Protocol">
+                <select id="action">
+                    <option value="ALLOW">ALLOW</option>
+                    <option value="BLOCK">BLOCK</option>
+                </select>
+                <button type="submit">Add Rule</button>
+            </form>
+            <div id="ruleResult"></div>
+        </div>
+        <div class="section">
+            <h2>Inspect Packet</h2>
+            <form id="packetForm">
+                <input type="text" id="packet_src_ip" placeholder="Source IP">
+                <input type="text" id="packet_dest_ip" placeholder="Destination IP">
+                <input type="number" id="packet_src_port" placeholder="Source Port">
+                <input type="number" id="packet_dest_port" placeholder="Destination Port">
+                <input type="text" id="packet_protocol" placeholder="Protocol">
+                <button type="submit">Inspect Packet</button>
+            </form>
+            <div id="packetResult"></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
